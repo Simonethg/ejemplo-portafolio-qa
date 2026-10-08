@@ -1,5 +1,5 @@
 > **Repo de referencia: no lo clones.** Armá el tuyo y usá este para comparar cómo debería verse después de cada paso.
-> Estás viendo **`v04-gestion-agil`**: Tablero Kanban con límite WIP y sprint de 1 semana.
+> Estás viendo **`v05-requisitos`**: Análisis de requisitos del filtro por edad.
 > Ejemplo con **Lucía Pereyra (QA ficticia)**: corridas, bugs y números reales (MiniModa, 2026-10-07). Reemplazá con tus propios hallazgos (mínimo 1 bug, 2 riesgos y 3 casos propios).
 
 | Etapa | Qué se suma | Ver |
@@ -8,8 +8,8 @@
 | `v01-contexto` | README con el contexto del proyecto y perfil inicial | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v01-contexto) |
 | `v02-riesgos` | Matriz de riesgos (ISO/IEC 25010), evidencia y registro de uso de IA | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v02-riesgos) |
 | `v03-plan-de-pruebas` | Plan de pruebas: objetivo, stakeholders, flujo de defectos y alcance | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v03-plan-de-pruebas) |
-| 👉 **v04-gestion-agil** | Tablero Kanban con límite WIP y sprint de 1 semana | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v04-gestion-agil) |
-| `v05-requisitos` | Análisis de requisitos del filtro por edad | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v05-requisitos) |
+| `v04-gestion-agil` | Tablero Kanban con límite WIP y sprint de 1 semana | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v04-gestion-agil) |
+| 👉 **v05-requisitos** | Análisis de requisitos del filtro por edad | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v05-requisitos) |
 | `v06-casos-de-prueba` | 16 casos de prueba y primera ejecución | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v06-casos-de-prueba) |
 | `v07-bugs` | BUG-001 y BUG-002 con evidencia + plantilla de Issue | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v07-bugs) |
 | `v08-accesibilidad-y-datos` | Lighthouse, DevTools, envío por país y datos ficticios | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v08-accesibilidad-y-datos) |
@@ -49,7 +49,7 @@ ls
 cd ~/qa-minimoda-ecommerce
 git status
 git add README.md docs/
-git commit -m "Gestión ágil: tablero Kanban y sprint de 1 semana"
+git commit -m "Análisis de requisitos del filtro por edad con criterios Dado/Cuando/Entonces"
 git push
 ```
 
@@ -83,6 +83,7 @@ Saber si el flujo de compra (filtro → carrito → checkout) funciona sin gener
 |---|---|---|
 | Plan de pruebas | Objetivo, stakeholders, flujo de defectos y alcance | [docs/plan-de-pruebas.md](docs/plan-de-pruebas.md) |
 | Matriz de riesgos | Pruebas priorizadas por riesgo (ISO/IEC 25010) | [docs/matriz-de-riesgos.md](docs/matriz-de-riesgos.md) |
+| Análisis de requisitos | Criterios ambiguos detectados antes de probar | [docs/analisis-de-requisitos.md](docs/analisis-de-requisitos.md) |
 | Gestión ágil | Tablero Kanban con límite WIP y sprint de 1 semana | [docs/gestion/](docs/gestion/) |
 | Uso de IA | Qué hizo mal la IA y cómo lo corregí | [docs/uso-de-ia.md](docs/uso-de-ia.md) |
 
