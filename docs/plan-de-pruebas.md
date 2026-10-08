@@ -7,7 +7,7 @@
 | **Producto** | MiniModa · tienda online de ropa infantil (demo de AcademiaQA, datos ficticios) |
 | **URL** | https://minimoda-navy.vercel.app |
 | **Autora** | Lucía Pereyra |
-| **Versión del plan** | 0.7 · 2026-10-07 |
+| **Versión del plan** | 0.8 · 2026-10-07 |
 
 ## 1. Objetivo
 Saber si el flujo de compra (filtro → carrito → checkout) funciona sin generar órdenes incorrectas y si la tienda está lista para vender.
@@ -39,14 +39,14 @@ Ver [matriz-de-riesgos.md](matriz-de-riesgos.md): 9 riesgos, 4 de prioridad alta
 |---|---|---|
 | Funcional | Partición de equivalencia (filtro por edad), valores límite (stock 4), casos negativos (tarjetas rechazadas, email inválido, carrito vacío) | [test-cases/](../test-cases/) |
 | Exploratoria | Sesión de 30 min con charter sobre checkout y carrito | [test-runs/](../test-runs/) |
-| Accesibilidad / compatibilidad | Lighthouse, DevTools, costo de envío por país | Pendiente |
+| Accesibilidad / compatibilidad | Lighthouse, DevTools, costo de envío por país | [accesibilidad-y-compatibilidad.md](accesibilidad-y-compatibilidad.md) |
 | Datos | SQL sobre el catálogo (stock) | Pendiente |
 | API | Postman/Newman: status, tiempo, campos, caso negativo 404 | Pendiente |
 | Regresión (smoke) | Playwright + TypeScript en GitHub Actions | Pendiente |
 
 ## 7. Entorno y datos
 - Navegador: Chromium · SO: Linux.
-- Datos: solo ficticios (en los casos de prueba). Tarjetas de prueba de la tienda: aprueban `4111111111111111`; rechazan `4000000000000002` (rechazada) y `4000000000009995` (fondos insuficientes).
+- Datos: solo ficticios ([test-data/](../test-data/)). Tarjetas de prueba de la tienda: aprueban `4111111111111111`; rechazan `4000000000000002` (rechazada) y `4000000000009995` (fondos insuficientes).
 
 ## 8. Criterios de entrada y salida
 - **Entrada:** la URL responde 200 y el requisito del filtro está revisado.
@@ -60,7 +60,7 @@ Ver [matriz-de-riesgos.md](matriz-de-riesgos.md): 9 riesgos, 4 de prioridad alta
 Tablero Kanban y sprint de 1 semana: [gestion/](gestion/).
 
 ## 11. Entregables
-[Matriz de riesgos](matriz-de-riesgos.md) · [análisis de requisitos](analisis-de-requisitos.md) · [casos](../test-cases/) · [registro de ejecución](../test-runs/registro-de-ejecucion.md) · [bugs](../bug-reports/) · (el resto se suma en los próximos avances)
+[Matriz de riesgos](matriz-de-riesgos.md) · [análisis de requisitos](analisis-de-requisitos.md) · [casos](../test-cases/) · [registro de ejecución](../test-runs/registro-de-ejecucion.md) · [bugs](../bug-reports/) · [accesibilidad](accesibilidad-y-compatibilidad.md) · (el resto se suma en los próximos avances)
 
 ## 12. Uso de IA
 La IA hace borradores; la revisión y la decisión son mías. Registro de lo que corregí: [uso-de-ia.md](uso-de-ia.md).

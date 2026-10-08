@@ -5,6 +5,7 @@
 | Corrida | Fecha | Entorno | Qué se ejecutó | Ejecutados | Pasaron | Fallaron | Bloqueados | Bugs |
 |---|---|---|---|---|---|---|---|---|
 | RUN-01 | 2026-10-07 | Chromium · Linux · https://minimoda-navy.vercel.app | Casos funcionales CP-001 a CP-016 | 16 | 14 | 2 | 0 | BUG-001, BUG-002 |
+| RUN-02 | 2026-10-07 | Lighthouse 12.8.2 | Accesibilidad de /tienda y /checkout | 2 páginas | — | — | — | Puntajes 94 y 96 · 4 mejoras |
 
 Detalle de cada caso (resultado y bug): [../test-cases/casos-de-prueba.csv](../test-cases/casos-de-prueba.csv).
 

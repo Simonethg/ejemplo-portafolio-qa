@@ -1,5 +1,5 @@
 > **Repo de referencia: no lo clones.** Armá el tuyo y usá este para comparar cómo debería verse después de cada paso.
-> Estás viendo **`v07-bugs`**: BUG-001 y BUG-002 con evidencia + plantilla de Issue.
+> Estás viendo **`v08-accesibilidad-y-datos`**: Lighthouse, DevTools, envío por país y datos ficticios.
 > Ejemplo con **Lucía Pereyra (QA ficticia)**: corridas, bugs y números reales (MiniModa, 2026-10-07). Reemplazá con tus propios hallazgos (mínimo 1 bug, 2 riesgos y 3 casos propios).
 
 | Etapa | Qué se suma | Ver |
@@ -11,8 +11,8 @@
 | `v04-gestion-agil` | Tablero Kanban con límite WIP y sprint de 1 semana | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v04-gestion-agil) |
 | `v05-requisitos` | Análisis de requisitos del filtro por edad | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v05-requisitos) |
 | `v06-casos-de-prueba` | 16 casos de prueba y primera ejecución | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v06-casos-de-prueba) |
-| 👉 **v07-bugs** | BUG-001 y BUG-002 con evidencia + plantilla de Issue | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v07-bugs) |
-| `v08-accesibilidad-y-datos` | Lighthouse, DevTools, envío por país y datos ficticios | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v08-accesibilidad-y-datos) |
+| `v07-bugs` | BUG-001 y BUG-002 con evidencia + plantilla de Issue | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v07-bugs) |
+| 👉 **v08-accesibilidad-y-datos** | Lighthouse, DevTools, envío por país y datos ficticios | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v08-accesibilidad-y-datos) |
 | `v09-sql` | Consultas SQL de validación de stock | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v09-sql) |
 | `v10-api` | Colección de Postman + `npm run test:api` | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v10-api) |
 | `v11-playwright-ci` | Smoke con Playwright + TypeScript y CI con badge | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v11-playwright-ci) |
@@ -48,8 +48,8 @@ ls
 ```bash
 cd ~/qa-minimoda-ecommerce
 git status
-git add README.md .github/ bug-reports/ docs/ evidence/ test-cases/ test-runs/
-git commit -m "Reporte de BUG-001 y BUG-002 con evidencia y plantilla de Issue"
+git add README.md bug-reports/ docs/ evidence/ test-data/ test-runs/
+git commit -m "Accesibilidad con Lighthouse, análisis en DevTools y datos de prueba ficticios"
 git push
 ```
 
@@ -84,6 +84,8 @@ Saber si el flujo de compra (filtro → carrito → checkout) funciona sin gener
 | [BUG-001](bug-reports/BUG-001-checkout-carrito-vacio.md) | Entrar directo a `/checkout` con el carrito vacío confirma la compra y da número de orden (solo cobra el envío, $ 3.500) | Alta | [captura](evidence/checkout-carrito-vacio.png) |
 | [BUG-002](bug-reports/BUG-002-carrito-supera-stock.md) | El carrito acepta 12 unidades del "Conjunto Deportivo Comodín", que tiene stock 4 | Alta | [captura](evidence/carrito-supera-stock.png) |
 
+**Por qué pasa (DevTools):** al tocar "Confirmar compra" no sale ningún request al servidor. La orden se arma en el navegador, así que nadie valida del lado del servidor que haya productos ni stock. Detalle en [accesibilidad y compatibilidad](docs/accesibilidad-y-compatibilidad.md#devtools-console-y-network).
+
 **Observación (todavía no es bug):** el checkout no muestra el detalle ni el total de los productos antes de confirmar; quedó como pregunta abierta en el [análisis de requisitos](docs/analisis-de-requisitos.md).
 
 ## Riesgos y cobertura
@@ -109,6 +111,8 @@ Matriz completa (9 riesgos, 3 descartados con motivo): [docs/matriz-de-riesgos.m
 | Casos de prueba | 16 casos: positivos, negativos y de valores límite, con trazabilidad a riesgos | [test-cases/](test-cases/) |
 | Ejecución | Qué pasó, qué falló y qué quedó bloqueado, con fecha | [test-runs/registro-de-ejecucion.md](test-runs/registro-de-ejecucion.md) |
 | Bugs | Pasos, esperado vs. obtenido, severidad, evidencia | [bug-reports/](bug-reports/) |
+| Accesibilidad y compatibilidad | Lighthouse, DevTools, envío por país | [docs/accesibilidad-y-compatibilidad.md](docs/accesibilidad-y-compatibilidad.md) |
+| Datos de prueba | Clientes ficticios y tarjetas de prueba | [test-data/](test-data/) |
 | Uso de IA | Qué hizo mal la IA y cómo lo corregí | [docs/uso-de-ia.md](docs/uso-de-ia.md) |
 
 ## Cómo trabajo con IA

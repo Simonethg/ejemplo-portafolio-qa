@@ -1,0 +1,11 @@
+nombre,email,pais_envio,direccion,tarjeta_prueba,resultado_esperado
+Lucía Prueba,lucia.qa@example.com,Argentina,Dirección de prueba 123,4111111111111111,Aprobada
+Ana Prueba,ana.prueba@example.com,Argentina,Dirección de prueba 456,4242424242424242,Aprobada
+Bruno Ficticio,bruno.ficticio@example.com,Uruguay,Dirección de prueba 789,5555555555554444,Aprobada
+Carla Ejemplo,carla.ejemplo@example.com,Chile,Dirección de prueba 101,5105105105105100,Aprobada
+Diego Demo,diego.demo@example.com,México,Dirección de prueba 202,4000000000000002,Rechazada (tarjeta rechazada)
+Elena Test,elena.test@example.com,Brasil,Dirección de prueba 303,4000000000009995,Rechazada (fondos insuficientes)
+Facundo Prueba,facundo.prueba@example.com,España,Dirección de prueba 404,4000000000000069,Rechazada (tarjeta vencida)
+Gabriela Ficticia,gabriela.ficticia@example.com,Perú,Dirección de prueba 505,4111111111111111,Aprobada
+Hernán Ejemplo,hernan-sin-arroba,Argentina,Dirección de prueba 606,4111111111111111,Error de formato de email
+Inés Demo,ines.demo@example.com,Japón,Dirección de prueba 707,4111111111111111,Aprobada

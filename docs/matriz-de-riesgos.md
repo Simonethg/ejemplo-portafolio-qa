@@ -13,7 +13,7 @@ Riesgos de calidad por característica de ISO/IEC 25010. **Prioridad = Probabili
 | R-06 | Adecuación funcional | Se pueden agregar productos sin stock | Media | Alto | **Alta** | IA | Sí: hay 3 productos con stock 0 | CP-006 | ✅ Pasa (botón "Sin stock" deshabilitado) |
 | R-03 | Adecuación funcional | El filtro por edad muestra productos de otra edad | Baja | Alto | Media | IA | Sí: es la forma principal de buscar | CP-001 a CP-005 | ✅ Pasa |
 | R-05 | Usabilidad | El formulario de checkout no avisa los datos inválidos | Media | Medio | Media | IA | Sí | CP-015 | ✅ Pasa ("El formato de email no es válido.") |
-| R-07 | Usabilidad (accesibilidad) | Textos y botones con bajo contraste | Alta | Medio | Media | IA | Sí | Lighthouse en /tienda y /checkout | Pendiente |
+| R-07 | Usabilidad (accesibilidad) | Textos y botones con bajo contraste | Alta | Medio | Media | IA | Sí | Lighthouse en /tienda y /checkout | ⚠️ 34 elementos con bajo contraste en /tienda ([detalle](accesibilidad-y-compatibilidad.md)) |
 | R-08 | Compatibilidad (interoperabilidad) | La API devuelve datos distintos a los que muestra la tienda | Baja | Alto | Media | IA | Sí: la tienda y la API exponen el mismo catálogo | Pruebas de API con Postman | Pendiente |
 | R-09 | Eficiencia de desempeño | El catálogo tarda en cargar | Baja | Medio | Baja | IA | Sí, pero solo como medición liviana (no carga) | Tiempo de respuesta en Postman (< 2000 ms) | Pendiente |
 
@@ -23,4 +23,4 @@ Riesgos de calidad por característica de ISO/IEC 25010. **Prioridad = Probabili
 - **"El cambio de idioma rompe los precios"** (IA): no hay selector de idioma.
 
 ## Resumen
-9 riesgos: 4 de prioridad alta, 4 media, 1 baja. Probados hasta ahora: 6 de 9 (el resto queda "Pendiente" y se cubre en los próximos avances).
+9 riesgos: 4 de prioridad alta, 4 media, 1 baja. Probados hasta ahora: 7 de 9 (el resto queda "Pendiente" y se cubre en los próximos avances).

@@ -26,4 +26,4 @@ Aparece "✅ Compra confirmada. Orden MM-860463. Envío a Argentina: $ 3.500. Te
 ![Compra confirmada con el carrito vacío](../evidence/checkout-carrito-vacio.png)
 
 ## Notas
-- Hace falta validar que el carrito tenga productos antes de confirmar.
+- En DevTools, Network: "Confirmar compra" no hace ningún request al servidor; la orden se arma en el navegador. Hace falta validar el carrito antes de confirmar (idealmente en el servidor).
