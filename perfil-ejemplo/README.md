@@ -28,6 +28,11 @@ Hace 5 años trabajo en atención al cliente de un e-commerce: reporto incidenci
 - Validación de flujos: pruebo el flujo de compra antes de responder un reclamo.
 - Seguimiento del ciclo de vida de un defecto: sigo cada ticket hasta su cierre.
 
+## Cómo trabajo con IA
+
+- La IA me da un primer borrador; yo decido qué sirve, lo verifico en la app y sumo lo que no vio.
+- Nunca le paso datos personales, claves ni información de clientes o de mi trabajo. Registro: [uso de IA](../docs/uso-de-ia.md).
+
 ## Educación
 
 - **Bootcamp QA con IA · AcademiaQA · 2026**

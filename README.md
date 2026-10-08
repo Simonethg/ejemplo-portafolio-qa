@@ -1,12 +1,12 @@
 > **Repo de referencia: no lo clones.** Armá el tuyo y usá este para comparar cómo debería verse después de cada paso.
-> Estás viendo **`v01-contexto`**: README con el contexto del proyecto y perfil inicial.
+> Estás viendo **`v02-riesgos`**: Matriz de riesgos (ISO/IEC 25010), evidencia y registro de uso de IA.
 > Ejemplo con **Lucía Pereyra (QA ficticia)**: corridas, bugs y números reales (MiniModa, 2026-10-07). Reemplazá con tus propios hallazgos (mínimo 1 bug, 2 riesgos y 3 casos propios).
 
 | Etapa | Qué se suma | Ver |
 |---|---|---|
 | `v00-repo-vacio` | Repo creado con README inicial y .gitignore | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v00-repo-vacio) |
-| 👉 **v01-contexto** | README con el contexto del proyecto y perfil inicial | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v01-contexto) |
-| `v02-riesgos` | Matriz de riesgos (ISO/IEC 25010), evidencia y registro de uso de IA | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v02-riesgos) |
+| `v01-contexto` | README con el contexto del proyecto y perfil inicial | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v01-contexto) |
+| 👉 **v02-riesgos** | Matriz de riesgos (ISO/IEC 25010), evidencia y registro de uso de IA | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v02-riesgos) |
 | `v03-plan-de-pruebas` | Plan de pruebas: objetivo, stakeholders, flujo de defectos y alcance | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v03-plan-de-pruebas) |
 | `v04-gestion-agil` | Tablero Kanban con límite WIP y sprint de 1 semana | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v04-gestion-agil) |
 | `v05-requisitos` | Análisis de requisitos del filtro por edad | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v05-requisitos) |
@@ -48,12 +48,10 @@ ls
 ```bash
 cd ~/qa-minimoda-ecommerce
 git status
-git add README.md
-git commit -m "README: contexto del proyecto de QA sobre MiniModa"
+git add README.md docs/ evidence/
+git commit -m "Matriz de riesgos de calidad (ISO/IEC 25010) y registro de uso de IA"
 git push
 ```
-
-Tu perfil (CV público) va en **otro** repo que se llama igual que tu usuario (`TU-USUARIO/TU-USUARIO`). Modelo: [perfil-ejemplo/README.md](perfil-ejemplo/README.md).
 
 **Errores comunes**
 
@@ -78,6 +76,18 @@ Proyecto de QA sobre el catálogo, los filtros, el carrito y el checkout de una 
 
 ## Objetivo
 Saber si el flujo de compra (filtro → carrito → checkout) funciona sin generar órdenes incorrectas y si la tienda está lista para vender.
+
+## Lo que hay hasta ahora
+
+| Qué | Qué demuestra | Link |
+|---|---|---|
+| Matriz de riesgos | Pruebas priorizadas por riesgo (ISO/IEC 25010) | [docs/matriz-de-riesgos.md](docs/matriz-de-riesgos.md) |
+| Uso de IA | Qué hizo mal la IA y cómo lo corregí | [docs/uso-de-ia.md](docs/uso-de-ia.md) |
+
+## Cómo trabajo con IA
+- La IA me da un primer borrador; yo decido qué sirve, lo verifico en la app y sumo lo que no vio.
+- Los 2 riesgos más importantes (checkout y stock) los encontré yo probando, no la IA.
+- Nunca le paso datos personales, claves ni información de clientes o de mi trabajo. Registro: [docs/uso-de-ia.md](docs/uso-de-ia.md).
 
 ## Autora
 Lucía Pereyra (ficticia) · Córdoba, Argentina · lucia.qa@example.com
