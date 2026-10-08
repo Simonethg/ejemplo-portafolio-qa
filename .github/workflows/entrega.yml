@@ -1,0 +1,24 @@
+# Check de entrega · Bootcamp QA con IA (AcademiaQA)
+# En cada push revisa: plantillas sin completar, teléfonos y direcciones, copias del repo de ejemplo,
+# secretos (.env, node_modules, claves) y emails de commit. Si falla, abrí el run: cada ERROR dice
+# en qué archivo y línea está el problema y cómo arreglarlo.
+name: Check de entrega
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  entrega:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Revisar la entrega
+        env:
+          REPO: ${{ github.repository }}
+          ANTES: ${{ github.event.before }}
+          BASE: ${{ github.event.pull_request.base.sha }}
+        run: python3 checks/check_entrega.py
