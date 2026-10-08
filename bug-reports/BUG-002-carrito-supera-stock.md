@@ -6,7 +6,7 @@
 | **Entorno** | https://minimoda-navy.vercel.app/tienda · Chromium · Linux · 2026-10-07 |
 | **Frecuencia** | Siempre |
 | **Riesgo relacionado** | R-02 |
-| **Caso relacionado** | CP-011 (falla) · CP-010 (pasa: hasta 4 unidades) |
+| **Caso relacionado** | CP-011 (falla) · CP-010 (pasa: hasta 4 unidades) · consulta 6 de [validaciones-stock.sql](../sql/validaciones-stock.sql) |
 
 ## Pasos para reproducir
 1. Abrir https://minimoda-navy.vercel.app/tienda con el carrito vacío.

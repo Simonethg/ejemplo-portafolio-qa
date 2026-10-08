@@ -15,6 +15,7 @@
 | 2026-10-07 | Casos de prueba | Casos de partición de equivalencia para el filtro | Se olvidó de "Todas las edades" y no propuso valores límite de stock | Sumé CP-005 y CP-010/CP-011 (stock 4: agrego 4 y 5) | Ejecutando los casos: CP-011 encontró un bug |
 | 2026-10-07 | Bug report | Redactar el bug del checkout | Título vago ("Error crítico en el checkout") y pasos con productos en el carrito, que no reproducen el bug | Título: qué falla, dónde y cuándo. Pasos desde /checkout con el carrito vacío | Seguí mis propios pasos en una ventana nueva: se reproduce siempre |
 | 2026-10-07 | Accesibilidad | Problemas de accesibilidad probables | Dijo que las imágenes no tenían texto alternativo | Lo descarté | Lighthouse: la auditoría de texto alternativo pasa |
+| 2026-10-07 | SQL | Productos de Niño (3-8) sin stock | Filtró con `edad = 'Niño'` y devolvió 0 filas | Valor exacto: `'Niño (3-8)'` → 1 fila (Buzo con Capucha Cohete) | Comparé con la tienda: es el único "Sin stock" en ese filtro |
 
 <details>
 <summary>Prompts principales</summary>
