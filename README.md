@@ -1,11 +1,11 @@
 > **Repo de referencia: no lo clones.** Armá el tuyo y usá este para comparar cómo debería verse después de cada paso.
-> Estás viendo **`v00-repo-vacio`**: Repo creado con README inicial y .gitignore.
+> Estás viendo **`v01-contexto`**: README con el contexto del proyecto y perfil inicial.
 > Ejemplo con **Lucía Pereyra (QA ficticia)**: corridas, bugs y números reales (MiniModa, 2026-10-07). Reemplazá con tus propios hallazgos (mínimo 1 bug, 2 riesgos y 3 casos propios).
 
 | Etapa | Qué se suma | Ver |
 |---|---|---|
-| 👉 **v00-repo-vacio** | Repo creado con README inicial y .gitignore | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v00-repo-vacio) |
-| `v01-contexto` | README con el contexto del proyecto y perfil inicial | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v01-contexto) |
+| `v00-repo-vacio` | Repo creado con README inicial y .gitignore | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v00-repo-vacio) |
+| 👉 **v01-contexto** | README con el contexto del proyecto y perfil inicial | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v01-contexto) |
 | `v02-riesgos` | Matriz de riesgos (ISO/IEC 25010), evidencia y registro de uso de IA | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v02-riesgos) |
 | `v03-plan-de-pruebas` | Plan de pruebas: objetivo, stakeholders, flujo de defectos y alcance | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v03-plan-de-pruebas) |
 | `v04-gestion-agil` | Tablero Kanban con límite WIP y sprint de 1 semana | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v04-gestion-agil) |
@@ -43,7 +43,17 @@ pwd
 ls
 ```
 
-**5. Listo:** tu repo tiene que verse como esta versión (`README.md` + `.gitignore`). En el próximo paso empezás a subir avances.
+**5. Subí el avance de este paso.** Creá o editá los archivos (mirá cómo quedan en esta versión) y subilos. Antes de `git add`, corré `git status` y revisá que **no** aparezcan `.env`, `auth/` ni `node_modules/`:
+
+```bash
+cd ~/qa-minimoda-ecommerce
+git status
+git add README.md
+git commit -m "README: contexto del proyecto de QA sobre MiniModa"
+git push
+```
+
+Tu perfil (CV público) va en **otro** repo que se llama igual que tu usuario (`TU-USUARIO/TU-USUARIO`). Modelo: [perfil-ejemplo/README.md](perfil-ejemplo/README.md).
 
 **Errores comunes**
 
@@ -60,4 +70,17 @@ ls
 
 **⬇️ Desde acá, el README de Lucía en esta etapa** (en el tuyo va tu versión, con tus datos):
 
-# qa-minimoda-ecommerce
+# QA de MiniModa · e-commerce de ropa infantil
+
+Proyecto de QA sobre el catálogo, los filtros, el carrito y el checkout de una tienda online. **En progreso:** voy sumando cada artefacto a medida que avanzo.
+
+> **Contexto:** MiniModa (https://minimoda-navy.vercel.app) es una tienda demo de AcademiaQA para pruebas, con datos y tarjetas ficticios. No es un cliente real: es un proyecto personal para mostrar cómo trabajo.
+
+## Objetivo
+Saber si el flujo de compra (filtro → carrito → checkout) funciona sin generar órdenes incorrectas y si la tienda está lista para vender.
+
+## Autora
+Lucía Pereyra (ficticia) · Córdoba, Argentina · lucia.qa@example.com
+
+## Datos y seguridad
+Solo datos ficticios y tarjetas de prueba que publica la propia tienda. En este repo no hay contraseñas, tokens, `.env` ni archivos de sesión (ver [.gitignore](.gitignore)).
