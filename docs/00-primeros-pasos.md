@@ -162,7 +162,7 @@ Más sobre Playwright: https://playwright.dev/docs/intro
 | `Author identity unknown` / *Please tell me who you are* al hacer `git commit` | Git no sabe quién sos (te salteaste el paso 2) | Corré los 2 `git config --global` del paso 2 con tu **email noreply**, nunca tu email personal. En Mac Git no avisa: usa `usuario@nombre-de-tu-Mac.local`; revisalo con `git config user.email` |
 | `fatal: not a git repository` | Corriste el comando fuera de la carpeta del repo | `cd ~/qa-minimoda-ecommerce` y repetí |
 | `pathspec '…' did not match any files` | Ese archivo o carpeta no existe (o tiene otro nombre). **No se agregó nada** de esa línea `git add` | Creá el archivo que falta (o corregí el nombre) y repetí el `git add` |
-| `Everything up-to-date`, pero en GitHub no aparece tu cambio | El `git add` o el `git commit` fallaron más arriba, así que no había nada nuevo para subir | Subí en la terminal, leé el primer error y arreglalo antes de repetir |
+| `Everything up-to-date`, pero en GitHub no aparece tu cambio | El `git add` o el `git commit` fallaron más arriba, así que no había nada nuevo para subir | Mirá más arriba en la terminal, leé el primer error y arreglalo antes de repetir |
 | `Username for 'https://github.com':` al hacer `git clone` | Dejaste `TU-USUARIO` en la URL (o el repo no existe) | Cambiá `TU-USUARIO` por tu usuario de GitHub. Nunca escribas tu contraseña ahí |
 | `destination path '…' already exists` | Ya lo habías clonado | No hace falta clonar de nuevo: `cd ~/qa-minimoda-ecommerce` |
 | `newman: not found` / `Cannot find module` | Falta instalar las dependencias del proyecto | `npm install` dentro de la carpeta del repo y repetí |
