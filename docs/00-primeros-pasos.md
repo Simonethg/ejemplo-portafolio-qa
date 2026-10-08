@@ -110,6 +110,7 @@ Lo que sí: la URL pública de MiniModa, los textos de la tienda y tus borradore
 
 ## 5. Crear tu repo y bajarlo a tu compu
 
+0. **Antes de crear el repo**: en https://github.com/settings/emails tildá **Keep my email addresses private** y **Block command line pushes that expose my email**. Si no, el primer commit (el README que crea GitHub) publica tu email personal.
 1. En GitHub: **+** → **New repository** → nombre `qa-minimoda-ecommerce` → **Public** → tildá **Add a README file** → **Create repository**.
 2. Botón verde **Code** → **HTTPS** → copiá la URL.
 3. En la terminal (cambiá `TU-USUARIO`):
@@ -158,6 +159,15 @@ Más sobre Playwright: https://playwright.dev/docs/intro
 | *No se puede cargar el archivo …\npm.ps1 porque la ejecución de scripts está deshabilitada* (Windows PowerShell) | Windows bloquea por defecto los scripts de PowerShell, y `npm`/`npx` usan uno | Corré una sola vez `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned` (si pregunta, respondé que sí), cerrá y volvé a abrir la terminal. Otra opción: usá Git Bash |
 | `npm warn deprecated …` | Avisos de paquetes viejos que usan otras dependencias | Se pueden ignorar: no son errores. Lo que importa es que el comando termine sin `npm error` |
 | `found N vulnerabilities` después de `npm install` | Avisos de `npm audit` sobre dependencias de herramientas que corren solo en tu compu | Se pueden ignorar en este proyecto. **No** corras `npm audit fix --force`: puede romper las versiones |
+| `Author identity unknown` / *Please tell me who you are* al hacer `git commit` | Git no sabe quién sos (te salteaste el paso 2) | Corré los 2 `git config --global` del paso 2 con tu **email noreply**, nunca tu email personal. En Mac Git no avisa: usa `usuario@nombre-de-tu-Mac.local`; revisalo con `git config user.email` |
+| `fatal: not a git repository` | Corriste el comando fuera de la carpeta del repo | `cd ~/qa-minimoda-ecommerce` y repetí |
+| `pathspec '…' did not match any files` | Ese archivo o carpeta no existe (o tiene otro nombre). **No se agregó nada** de esa línea `git add` | Creá el archivo que falta (o corregí el nombre) y repetí el `git add` |
+| `Everything up-to-date`, pero en GitHub no aparece tu cambio | El `git add` o el `git commit` fallaron más arriba, así que no había nada nuevo para subir | Subí en la terminal, leé el primer error y arreglalo antes de repetir |
+| `Username for 'https://github.com':` al hacer `git clone` | Dejaste `TU-USUARIO` en la URL (o el repo no existe) | Cambiá `TU-USUARIO` por tu usuario de GitHub. Nunca escribas tu contraseña ahí |
+| `destination path '…' already exists` | Ya lo habías clonado | No hace falta clonar de nuevo: `cd ~/qa-minimoda-ecommerce` |
+| `newman: not found` / `Cannot find module` | Falta instalar las dependencias del proyecto | `npm install` dentro de la carpeta del repo y repetí |
+| `Cannot navigate to invalid URL` en Playwright | Falta `baseURL` en `playwright.config.ts` | En `use: { }` poné `baseURL: 'https://minimoda-navy.vercel.app',` |
+| `Host system is missing dependencies to run browsers` | Tu compu no tiene lo que pide WebKit/Firefox | En `playwright.config.ts` dejá solo chromium o corré `npx playwright test --project=chromium` |
 | `rejected … (fetch first)` al hacer `git push` | En GitHub hay cambios que no tenés (por ejemplo, editaste desde la web) | `git pull --rebase` y después `git push` |
 
 ## 9. Checklist antes de cada push
