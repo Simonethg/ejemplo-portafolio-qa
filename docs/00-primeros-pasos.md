@@ -168,6 +168,7 @@ Más sobre Playwright: https://playwright.dev/docs/intro
 | `newman: not found` / `Cannot find module` | Falta instalar las dependencias del proyecto | `npm install` dentro de la carpeta del repo y repetí |
 | `Cannot navigate to invalid URL` en Playwright | Falta `baseURL` en `playwright.config.ts` | En `use: { }` poné `baseURL: 'https://minimoda-navy.vercel.app',` |
 | `Host system is missing dependencies to run browsers` | Tu compu no tiene lo que pide WebKit/Firefox | En `playwright.config.ts` dejá solo chromium o corré `npx playwright test --project=chromium` |
+| Cruz roja en **Actions** → «Check de entrega» | El check encontró algo que no tiene que estar en tu repo: `[corchetes]` de plantilla, un teléfono o una dirección, algo copiado del ejemplo, un secreto o un commit con tu email personal | Abrí el run → «Revisar la entrega». Cada **ERROR** dice archivo, línea y cómo arreglarlo. Arreglalo, `git add`, `git commit` y `git push`: el check corre de nuevo. Los **AVISO** no hacen fallar (por ejemplo, el primer commit que creó GitHub con tu email) |
 | `rejected … (fetch first)` al hacer `git push` | En GitHub hay cambios que no tenés (por ejemplo, editaste desde la web) | `git pull --rebase` y después `git push` |
 
 ## 9. Checklist antes de cada push
