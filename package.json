@@ -1,0 +1,12 @@
+{
+  "name": "qa-minimoda-ecommerce",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Proyecto de QA sobre MiniModa: riesgos, casos, bugs, API, SQL y smoke con Playwright en CI.",
+  "scripts": {
+    "test:api": "newman run api-tests/minimoda.postman_collection.json -e api-tests/minimoda.postman_environment.json"
+  },
+  "devDependencies": {
+    "newman": "^6.2.2"
+  }
+}

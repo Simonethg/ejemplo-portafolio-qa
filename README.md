@@ -1,5 +1,5 @@
 > **Repo de referencia: no lo clones.** Armá el tuyo y usá este para comparar cómo debería verse después de cada paso.
-> Estás viendo **`v09-sql`**: Consultas SQL de validación de stock.
+> Estás viendo **`v10-api`**: Colección de Postman + `npm run test:api`.
 > Ejemplo con **Lucía Pereyra (QA ficticia)**: corridas, bugs y números reales (MiniModa, 2026-10-07). Reemplazá con tus propios hallazgos (mínimo 1 bug, 2 riesgos y 3 casos propios).
 
 | Etapa | Qué se suma | Ver |
@@ -13,8 +13,8 @@
 | `v06-casos-de-prueba` | 16 casos de prueba y primera ejecución | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v06-casos-de-prueba) |
 | `v07-bugs` | BUG-001 y BUG-002 con evidencia + plantilla de Issue | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v07-bugs) |
 | `v08-accesibilidad-y-datos` | Lighthouse, DevTools, envío por país y datos ficticios | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v08-accesibilidad-y-datos) |
-| 👉 **v09-sql** | Consultas SQL de validación de stock | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v09-sql) |
-| `v10-api` | Colección de Postman + `npm run test:api` | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v10-api) |
+| `v09-sql` | Consultas SQL de validación de stock | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v09-sql) |
+| 👉 **v10-api** | Colección de Postman + `npm run test:api` | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v10-api) |
 | `v11-playwright-ci` | Smoke con Playwright + TypeScript y CI con badge | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v11-playwright-ci) |
 | `v12-informe-final` | Informe final y README como caso de estudio | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v12-informe-final) |
 | `v13-perfil` | Perfil de GitHub con proyectos, métricas y habilidades con evidencia (versión final) | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v13-perfil) |
@@ -48,8 +48,8 @@ ls
 ```bash
 cd ~/qa-minimoda-ecommerce
 git status
-git add README.md bug-reports/ docs/ sql/
-git commit -m "Consultas SQL de validación de stock"
+git add README.md api-tests/ bug-reports/ docs/ package-lock.json package.json test-runs/
+git commit -m "Colección de Postman con tests y script npm run test:api"
 git push
 ```
 
@@ -96,7 +96,7 @@ Saber si el flujo de compra (filtro → carrito → checkout) funciona sin gener
 | R-02 · El carrito acepta más unidades que el stock | Alta | CP-010 · CP-011 · [SQL 6](sql/validaciones-stock.sql) | ❌ [BUG-002](bug-reports/BUG-002-carrito-supera-stock.md) |
 | R-04 · Una tarjeta rechazada genera una orden igual | Alta | CP-013 · CP-014 | ✅ Pasa |
 | R-06 · Se pueden agregar productos sin stock | Alta | CP-006 · [SQL 2](sql/validaciones-stock.sql) | ✅ Pasa (botón "Sin stock" deshabilitado) |
-| R-03 · El filtro por edad muestra productos de otra edad | Media | CP-001 a CP-005 | ✅ Pasa |
+| R-03 · El filtro por edad muestra productos de otra edad | Media | CP-001 a CP-005 · API request 02 | ✅ Pasa |
 
 Matriz completa (9 riesgos, 3 descartados con motivo): [docs/matriz-de-riesgos.md](docs/matriz-de-riesgos.md).
 
@@ -114,7 +114,20 @@ Matriz completa (9 riesgos, 3 descartados con motivo): [docs/matriz-de-riesgos.m
 | Accesibilidad y compatibilidad | Lighthouse, DevTools, envío por país | [docs/accesibilidad-y-compatibilidad.md](docs/accesibilidad-y-compatibilidad.md) |
 | Datos de prueba | Clientes ficticios y tarjetas de prueba | [test-data/](test-data/) |
 | SQL | Consultas de stock sobre el catálogo real | [sql/](sql/) |
+| API | Colección de Postman: status, tiempo, campos y un caso negativo | [api-tests/](api-tests/) |
 | Uso de IA | Qué hizo mal la IA y cómo lo corregí | [docs/uso-de-ia.md](docs/uso-de-ia.md) |
+
+## Cómo correr los tests
+
+> **Primero, entrá a la carpeta del repo** (`cd`). Si corrés los comandos desde otra carpeta fallan con `ENOENT`. Chequeá con `pwd` y `ls` (tenés que ver `README.md`).
+
+```bash
+cd ~/qa-minimoda-ecommerce   # la carpeta de tu repo
+npm install                  # la primera vez
+npm run test:api             # API: colección de Postman con Newman
+```
+
+En la API: 4 requests, 15 aserciones, 0 fallidas. Todo corre contra la URL pública de MiniModa, sin usuario, contraseña ni variables de entorno.
 
 ## Cómo trabajo con IA
 - La IA me da un primer borrador; yo decido qué sirve, lo verifico en la app y sumo lo que no vio.

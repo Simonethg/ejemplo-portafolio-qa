@@ -24,4 +24,5 @@ La 5.ª unidad se agrega sin aviso y se puede llegar a 12 unidades: el carrito m
 ![Carrito con 12 unidades de un producto con stock 4](../evidence/carrito-supera-stock.png)
 
 ## Notas
+- La API confirma el stock: `GET /api/products/12` → `"stock": 4`.
 - Con los productos sin stock (stock 0) el botón sí se deshabilita (CP-006 pasa): el control existe, pero no compara la cantidad del carrito con el stock.

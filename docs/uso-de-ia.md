@@ -16,6 +16,7 @@
 | 2026-10-07 | Bug report | Redactar el bug del checkout | Título vago ("Error crítico en el checkout") y pasos con productos en el carrito, que no reproducen el bug | Título: qué falla, dónde y cuándo. Pasos desde /checkout con el carrito vacío | Seguí mis propios pasos en una ventana nueva: se reproduce siempre |
 | 2026-10-07 | Accesibilidad | Problemas de accesibilidad probables | Dijo que las imágenes no tenían texto alternativo | Lo descarté | Lighthouse: la auditoría de texto alternativo pasa |
 | 2026-10-07 | SQL | Productos de Niño (3-8) sin stock | Filtró con `edad = 'Niño'` y devolvió 0 filas | Valor exacto: `'Niño (3-8)'` → 1 fila (Buzo con Capucha Cohete) | Comparé con la tienda: es el único "Sin stock" en ese filtro |
+| 2026-10-07 | API | Requests de Postman para la API de productos | Supuso la ruta `/api/productos` (en español) | La ruta real es `/api/products` | `/api/productos` da 404; `/api/products` da 200 |
 
 <details>
 <summary>Prompts principales</summary>

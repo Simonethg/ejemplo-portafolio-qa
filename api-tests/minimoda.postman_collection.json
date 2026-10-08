@@ -1,0 +1,162 @@
+{
+  "info": {
+    "name": "MiniModa · API de productos",
+    "description": "Pruebas de la API pública de MiniModa (solo lectura, GET). Sin claves ni tokens.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "01 · Listar productos",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "pm.test('Responde en menos de 2000 ms', () => pm.expect(pm.response.responseTime).to.be.below(2000));",
+              "const body = pm.response.json();",
+              "pm.test('ok es true y count coincide con la cantidad de productos', () => {",
+              "  pm.expect(body.ok).to.eql(true);",
+              "  pm.expect(body.count).to.eql(body.products.length);",
+              "});",
+              "pm.test('El catálogo tiene 12 productos', () => pm.expect(body.count).to.eql(12));",
+              "pm.test('Cada producto tiene edad, precio > 0 y stock >= 0', () => {",
+              "  body.products.forEach(p => {",
+              "    pm.expect(p).to.have.property('edad');",
+              "    pm.expect(p.precio).to.be.above(0);",
+              "    pm.expect(p.stock).to.be.at.least(0);",
+              "  });",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/products",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "products"
+          ]
+        },
+        "description": "Catálogo completo. Valida status, tiempo, estructura y reglas básicas de datos."
+      }
+    },
+    {
+      "name": "02 · Filtrar por edad Niño (3-8)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "pm.test('Responde en menos de 2000 ms', () => pm.expect(pm.response.responseTime).to.be.below(2000));",
+              "const body = pm.response.json();",
+              "pm.test('Devuelve 3 productos', () => pm.expect(body.count).to.eql(3));",
+              "pm.test('Todos son de Niño (3-8)', () => {",
+              "  body.products.forEach(p => pm.expect(p.edad).to.eql('Niño (3-8)'));",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/products?edad=Niño (3-8)",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "products"
+          ],
+          "query": [
+            {
+              "key": "edad",
+              "value": "Niño (3-8)"
+            }
+          ]
+        },
+        "description": "Mismo criterio que el filtro de la tienda (CP-002), pero por API."
+      }
+    },
+    {
+      "name": "03 · Detalle de producto 4",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "pm.test('Responde en menos de 2000 ms', () => pm.expect(pm.response.responseTime).to.be.below(2000));",
+              "const body = pm.response.json();",
+              "pm.test('Es la Remera Dino Aventurero', () => pm.expect(body.product.nombre).to.eql('Remera Dino Aventurero'));",
+              "pm.test('Stock es un número entero', () => pm.expect(Number.isInteger(body.product.stock)).to.be.true);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/products/4",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "products",
+            "4"
+          ]
+        },
+        "description": "Producto usado en el smoke de Playwright."
+      }
+    },
+    {
+      "name": "04 · Producto inexistente (negativo)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 404', () => pm.response.to.have.status(404));",
+              "const body = pm.response.json();",
+              "pm.test('ok es false y hay mensaje de error', () => {",
+              "  pm.expect(body.ok).to.eql(false);",
+              "  pm.expect(body.error).to.include('999');",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/products/999",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "products",
+            "999"
+          ]
+        },
+        "description": "Caso negativo: un id que no existe tiene que dar 404 con mensaje claro."
+      }
+    }
+  ]
+}
