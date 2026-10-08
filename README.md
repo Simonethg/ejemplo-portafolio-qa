@@ -28,6 +28,8 @@
 
 **2. Sumá el `.gitignore` (una sola vez, desde la web).** En tu repo: **Add file** → **Create new file** → nombre `.gitignore` → pegá el contenido de [.gitignore](.gitignore) → **Commit changes**. Así `node_modules/`, `.env` y `auth/` nunca se suben.
 
+**Check de entrega (automático).** Después del `.gitignore`, sumá el check de la guía T1. En cada push, **Actions** → «Check de entrega» revisa que no queden `[corchetes]` de plantilla, teléfonos ni direcciones, archivos copiados de este ejemplo, secretos (`.env`, `node_modules`, claves) ni commits con tu email personal, y te dice en qué archivo y línea está el problema y cómo arreglarlo.
+
 **3. Bajalo a tu compu (una sola vez).** Botón verde **Code** → **HTTPS** → copiá la URL. En la terminal (cambiá `TU-USUARIO`):
 
 ```bash
