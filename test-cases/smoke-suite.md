@@ -20,6 +20,6 @@
 | 2026-10-07 21:24 ART | Local (Chromium, Linux) | 5 passed (4,3 s) | Ninguno |
 | 2026-10-07 21:24 ART | Local (Chromium, Linux) | 5 passed (5,0 s) | Ninguno |
 | 2026-10-07 21:24 ART | Local (Chromium, Linux) | 5 passed (4,1 s) | Ninguno |
-| 2026-10-07 | GitHub Actions ([Actions](https://github.com/Simonethg/ejemplo-portafolio-qa/actions/workflows/playwright.yml)) | 5 passed | Ninguno |
+| 2026-10-07 | GitHub Actions ([run](https://github.com/Simonethg/ejemplo-portafolio-qa/actions/runs/37710326022)) | 5 passed | Ninguno |
 
 "5 passed" incluye el test de BUG-001, que falla como se espera (`test.fail`). En el reporte HTML aparece como pasado.

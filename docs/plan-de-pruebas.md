@@ -7,7 +7,7 @@
 | **Producto** | MiniModa · tienda online de ropa infantil (demo de AcademiaQA, datos ficticios) |
 | **URL** | https://minimoda-navy.vercel.app |
 | **Autora** | Lucía Pereyra |
-| **Versión del plan** | 0.11 · 2026-10-07 |
+| **Versión del plan** | 1.0 · 2026-10-07 |
 
 ## 1. Objetivo
 Saber si el flujo de compra (filtro → carrito → checkout) funciona sin generar órdenes incorrectas y si la tienda está lista para vender.
@@ -60,7 +60,7 @@ Ver [matriz-de-riesgos.md](matriz-de-riesgos.md): 9 riesgos, 4 de prioridad alta
 Tablero Kanban y sprint de 1 semana: [gestion/](gestion/).
 
 ## 11. Entregables
-[Matriz de riesgos](matriz-de-riesgos.md) · [análisis de requisitos](analisis-de-requisitos.md) · [casos](../test-cases/) · [registro de ejecución](../test-runs/registro-de-ejecucion.md) · [bugs](../bug-reports/) · [accesibilidad](accesibilidad-y-compatibilidad.md) · [consultas SQL](../sql/) · [colección de API](../api-tests/) · [tests automatizados con CI](../tests/) · (el resto se suma en los próximos avances)
+[Matriz de riesgos](matriz-de-riesgos.md) · [análisis de requisitos](analisis-de-requisitos.md) · [casos](../test-cases/) · [registro de ejecución](../test-runs/registro-de-ejecucion.md) · [bugs](../bug-reports/) · [accesibilidad](accesibilidad-y-compatibilidad.md) · [consultas SQL](../sql/) · [colección de API](../api-tests/) · [tests automatizados con CI](../tests/) · [informe final](../reports/informe-final.md)
 
 ## 12. Uso de IA
 La IA hace borradores; la revisión y la decisión son mías. Registro de lo que corregí: [uso-de-ia.md](uso-de-ia.md).

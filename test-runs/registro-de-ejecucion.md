@@ -8,7 +8,7 @@
 | RUN-02 | 2026-10-07 | Lighthouse 12.8.2 | Accesibilidad de /tienda y /checkout | 2 páginas | — | — | — | Puntajes 94 y 96 · 4 mejoras |
 | RUN-03 | 2026-10-07 | Newman 6 · Linux | Colección de API (4 requests) | 15 aserciones | 15 | 0 | 0 | — |
 | RUN-04 | 2026-10-07 | Playwright 1.63 · Chromium · local | Smoke automatizado (3 corridas seguidas) | 5 × 3 | 5 × 3 | 0 | 0 | BUG-001 (test.fail, esperado) |
-| RUN-05 | 2026-10-07 | GitHub Actions · ubuntu-latest · Chromium | Smoke automatizado en CI ([Actions](https://github.com/Simonethg/ejemplo-portafolio-qa/actions/workflows/playwright.yml)) | 5 | 5 | 0 | 0 | BUG-001 (test.fail, esperado) |
+| RUN-05 | 2026-10-07 | GitHub Actions · ubuntu-latest · Chromium | Smoke automatizado en CI ([run](https://github.com/Simonethg/ejemplo-portafolio-qa/actions/runs/37710326022)) | 5 | 5 | 0 | 0 | BUG-001 (test.fail, esperado) |
 
 Detalle de cada caso (resultado y bug): [../test-cases/casos-de-prueba.csv](../test-cases/casos-de-prueba.csv).
 

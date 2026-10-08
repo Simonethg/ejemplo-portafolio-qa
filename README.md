@@ -1,5 +1,5 @@
 > **Repo de referencia: no lo clones.** Armá el tuyo y usá este para comparar cómo debería verse después de cada paso.
-> Estás viendo **`v11-playwright-ci`**: Smoke con Playwright + TypeScript y CI con badge.
+> Estás viendo **`v12-informe-final`**: Informe final y README como caso de estudio.
 > Ejemplo con **Lucía Pereyra (QA ficticia)**: corridas, bugs y números reales (MiniModa, 2026-10-07). Reemplazá con tus propios hallazgos (mínimo 1 bug, 2 riesgos y 3 casos propios).
 
 | Etapa | Qué se suma | Ver |
@@ -15,8 +15,8 @@
 | `v08-accesibilidad-y-datos` | Lighthouse, DevTools, envío por país y datos ficticios | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v08-accesibilidad-y-datos) |
 | `v09-sql` | Consultas SQL de validación de stock | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v09-sql) |
 | `v10-api` | Colección de Postman + `npm run test:api` | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v10-api) |
-| 👉 **v11-playwright-ci** | Smoke con Playwright + TypeScript y CI con badge | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v11-playwright-ci) |
-| `v12-informe-final` | Informe final y README como caso de estudio | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v12-informe-final) |
+| `v11-playwright-ci` | Smoke con Playwright + TypeScript y CI con badge | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v11-playwright-ci) |
+| 👉 **v12-informe-final** | Informe final y README como caso de estudio | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v12-informe-final) |
 | `v13-perfil` | Perfil de GitHub con proyectos, métricas y habilidades con evidencia (versión final) | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v13-perfil) |
 
 <details>
@@ -48,8 +48,8 @@ ls
 ```bash
 cd ~/qa-minimoda-ecommerce
 git status
-git add README.md .github/ bug-reports/ docs/ evidence/ package-lock.json package.json playwright.config.ts test-cases/ test-runs/ tests/
-git commit -m "Smoke con Playwright + TypeScript y CI en GitHub Actions"
+git add README.md docs/ reports/ test-cases/ test-runs/
+git commit -m "Informe final con métricas y README como caso de estudio"
 git push
 ```
 
@@ -70,14 +70,23 @@ git push
 
 # QA de MiniModa · e-commerce de ropa infantil
 
-[![Playwright Tests](https://github.com/Simonethg/ejemplo-portafolio-qa/actions/workflows/playwright.yml/badge.svg?branch=v11-playwright-ci)](https://github.com/Simonethg/ejemplo-portafolio-qa/actions/workflows/playwright.yml)
+[![Playwright Tests](https://github.com/Simonethg/ejemplo-portafolio-qa/actions/workflows/playwright.yml/badge.svg?branch=v12-informe-final)](https://github.com/Simonethg/ejemplo-portafolio-qa/actions/workflows/playwright.yml)
 
-Proyecto de QA sobre el catálogo, los filtros, el carrito y el checkout de una tienda online. **En progreso:** voy sumando cada artefacto a medida que avanzo.
+Proyecto de QA de punta a punta sobre el catálogo, los filtros, el carrito y el checkout de una tienda online: análisis de riesgos, casos de prueba, bugs reportados con evidencia, pruebas de API, SQL y un smoke automatizado con Playwright que corre en CI.
 
 > **Contexto:** MiniModa (https://minimoda-navy.vercel.app) es una tienda demo de AcademiaQA para pruebas, con datos y tarjetas ficticios. No es un cliente real: es un proyecto personal para mostrar cómo trabajo.
 
-## Objetivo
-Saber si el flujo de compra (filtro → carrito → checkout) funciona sin generar órdenes incorrectas y si la tienda está lista para vender.
+## En 30 segundos
+
+| | |
+|---|---|
+| **Producto** | Tienda online: 12 productos, filtros por edad, color y precio, carrito y checkout con tarjetas de prueba |
+| **Mi rol** | Todo el ciclo de QA, en solitario: planifiqué, diseñé, ejecuté, reporté y automaticé |
+| **Riesgo principal** | Que el checkout genere órdenes inválidas o que el carrito venda más de lo que hay en stock |
+| **Qué encontré** | **2 bugs de severidad alta**: el checkout confirma compras con el carrito vacío y el carrito acepta 12 unidades de un producto con stock 4 |
+| **Métricas** | 16 casos ejecutados (14 pasan, 2 fallan) · 2 bugs · 4 requests de API, 15 aserciones en verde · 5 tests de Playwright: 3 de 3 corridas locales y CI en verde ([run](https://github.com/Simonethg/ejemplo-portafolio-qa/actions/runs/37710326022)) · Lighthouse accesibilidad 94 (/tienda) |
+| **Herramientas** | Playwright + TypeScript · GitHub Actions · Postman/Newman · SQL (SQLite) · Lighthouse · Chrome DevTools · IA (con registro de correcciones) |
+| **Fecha de las corridas** | 2026-10-07 |
 
 ## Qué encontré
 
@@ -102,7 +111,7 @@ Saber si el flujo de compra (filtro → carrito → checkout) funciona sin gener
 
 Matriz completa (9 riesgos, 3 descartados con motivo): [docs/matriz-de-riesgos.md](docs/matriz-de-riesgos.md).
 
-## Lo que hay hasta ahora
+## Evidencia
 
 | Qué | Qué demuestra | Link |
 |---|---|---|
@@ -118,6 +127,7 @@ Matriz completa (9 riesgos, 3 descartados con motivo): [docs/matriz-de-riesgos.m
 | SQL | Consultas de stock sobre el catálogo real | [sql/](sql/) |
 | API | Colección de Postman: status, tiempo, campos y un caso negativo | [api-tests/](api-tests/) |
 | Automatización | Smoke de flujos críticos con Playwright, en CI | [tests/](tests/) · [workflow](.github/workflows/playwright.yml) |
+| Informe final | Métricas, riesgos que quedan y recomendación | [reports/informe-final.md](reports/informe-final.md) |
 | Uso de IA | Qué hizo mal la IA y cómo lo corregí | [docs/uso-de-ia.md](docs/uso-de-ia.md) |
 
 ## Cómo correr los tests
@@ -141,6 +151,26 @@ En la API: 4 requests, 15 aserciones, 0 fallidas. Todo corre contra la URL públ
 - La IA me da un primer borrador; yo decido qué sirve, lo verifico en la app y sumo lo que no vio.
 - Los 2 riesgos más importantes (checkout y stock) los encontré yo probando, no la IA.
 - Nunca le paso datos personales, claves ni información de clientes o de mi trabajo. Registro: [docs/uso-de-ia.md](docs/uso-de-ia.md).
+
+## Limitaciones y próximos pasos
+- Fuera de alcance: pagos reales, carga y seguridad (app demo de terceros, sin permiso para eso).
+- Solo Chromium (en Linux). Próximo: sumar Firefox y WebKit al CI y correr la colección de Postman con Newman en el mismo workflow.
+- La base de datos de MiniModa no es accesible: el SQL corre sobre una copia del catálogo que devuelve la API.
+
+## Estructura
+
+```text
+docs/            plan, riesgos, requisitos, gestión, accesibilidad y uso de IA
+test-cases/      casos de prueba (CSV) y smoke suite
+test-runs/       registro de ejecución y sesión exploratoria
+bug-reports/     bugs en Markdown (también se cargan como Issues)
+api-tests/       colección y entorno de Postman (sin claves)
+sql/             datos del catálogo y consultas de validación
+test-data/       datos ficticios
+tests/           tests de Playwright (TypeScript)
+evidence/        capturas sin datos personales
+reports/         informe final
+```
 
 ## Autora
 Lucía Pereyra (ficticia) · Córdoba, Argentina · lucia.qa@example.com
