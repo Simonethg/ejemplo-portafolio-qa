@@ -73,9 +73,13 @@ Usá siempre la **ventana oficial de login**. Dos opciones:
 ```bash
 # Windows
 winget install --id GitHub.cli -e
-# Mac
+# Mac (si tenés Homebrew)
 brew install gh
+# Linux (Ubuntu o Debian)
+sudo apt install gh
 ```
+
+¿Mac sin Homebrew? Descargá el instalador `gh_..._macOS_universal.pkg` de https://github.com/cli/cli/releases/latest y abrilo con doble clic.
 
 ```bash
 gh auth login
