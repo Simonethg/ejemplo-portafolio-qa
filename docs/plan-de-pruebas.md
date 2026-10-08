@@ -7,9 +7,7 @@
 | **Producto** | MiniModa · tienda online de ropa infantil (demo de AcademiaQA, datos ficticios) |
 | **URL** | https://minimoda-navy.vercel.app |
 | **Autora** | Lucía Pereyra |
-| **Versión del plan** | 0.5 · 2026-10-07 |
-
-> Documento vivo: empieza con objetivo, contexto y alcance. Enfoque, entorno, criterios y entregables se suman cuando diseño los casos.
+| **Versión del plan** | 0.6 · 2026-10-07 |
 
 ## 1. Objetivo
 Saber si el flujo de compra (filtro → carrito → checkout) funciona sin generar órdenes incorrectas y si la tienda está lista para vender.
@@ -36,8 +34,33 @@ Saber si el flujo de compra (filtro → carrito → checkout) funciona sin gener
 ## 5. Riesgos
 Ver [matriz-de-riesgos.md](matriz-de-riesgos.md): 9 riesgos, 4 de prioridad alta. Se prueba primero lo de prioridad alta.
 
-## 6. Gestión del trabajo
+## 6. Enfoque
+| Tipo de prueba | Técnica | Dónde queda |
+|---|---|---|
+| Funcional | Partición de equivalencia (filtro por edad), valores límite (stock 4), casos negativos (tarjetas rechazadas, email inválido, carrito vacío) | [test-cases/](../test-cases/) |
+| Exploratoria | Sesión de 30 min con charter sobre checkout y carrito | Pendiente |
+| Accesibilidad / compatibilidad | Lighthouse, DevTools, costo de envío por país | Pendiente |
+| Datos | SQL sobre el catálogo (stock) | Pendiente |
+| API | Postman/Newman: status, tiempo, campos, caso negativo 404 | Pendiente |
+| Regresión (smoke) | Playwright + TypeScript en GitHub Actions | Pendiente |
+
+## 7. Entorno y datos
+- Navegador: Chromium · SO: Linux.
+- Datos: solo ficticios (en los casos de prueba). Tarjetas de prueba de la tienda: aprueban `4111111111111111`; rechazan `4000000000000002` (rechazada) y `4000000000009995` (fondos insuficientes).
+
+## 8. Criterios de entrada y salida
+- **Entrada:** la URL responde 200 y el requisito del filtro está revisado.
+- **Salida:** 100 % de los casos de prioridad alta ejecutados · todos los bugs de severidad alta reportados con evidencia.
+
+## 9. Gestión de defectos
+- Cada bug va como Issue con una plantilla de bug y con una copia en `bug-reports/`.
+- **Severidad** (impacto técnico): Crítica / Alta / Media / Baja. **Prioridad** (urgencia de negocio): la decide el PM.
+
+## 10. Gestión del trabajo
 Tablero Kanban y sprint de 1 semana: [gestion/](gestion/).
 
-## 7. Uso de IA
+## 11. Entregables
+[Matriz de riesgos](matriz-de-riesgos.md) · [análisis de requisitos](analisis-de-requisitos.md) · [casos](../test-cases/) · [registro de ejecución](../test-runs/registro-de-ejecucion.md) · (el resto se suma en los próximos avances)
+
+## 12. Uso de IA
 La IA hace borradores; la revisión y la decisión son mías. Registro de lo que corregí: [uso-de-ia.md](uso-de-ia.md).

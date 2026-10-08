@@ -1,0 +1,28 @@
+ID,Título,Riesgo,Técnica,Precondiciones,Pasos,Datos,Resultado esperado,Prioridad,Resultado (2026-10-07),Bug,Automatizado
+CP-001,Filtrar por Bebé (0-2) muestra solo productos de esa edad,R-03,Partición de equivalencia,Estar en /tienda con Todas las edades,1. Elegir Edad: Bebé (0-2),—,Se ven 3 productos y todos dicen Bebé (0-2),Media,Pasa,,
+CP-002,Filtrar por Niño (3-8) muestra solo productos de esa edad,R-03,Partición de equivalencia,Estar en /tienda con Todas las edades,1. Elegir Edad: Niño (3-8),—,Se ven 3 productos y todos dicen Niño (3-8); no se ve el Body (Bebé),Media,Pasa,,
+CP-003,Filtrar por Niña (3-8) muestra solo productos de esa edad,R-03,Partición de equivalencia,Estar en /tienda con Todas las edades,1. Elegir Edad: Niña (3-8),—,Se ven 2 productos y todos dicen Niña (3-8),Media,Pasa,,
+CP-004,Filtrar por Pre-teen (9-12) muestra solo productos de esa edad,R-03,Partición de equivalencia,Estar en /tienda con Todas las edades,1. Elegir Edad: Pre-teen (9-12),—,Se ven 4 productos y todos dicen Pre-teen (9-12),Media,Pasa,,
+CP-005,Volver a Todas las edades muestra el catálogo completo,R-03,Partición de equivalencia,Haber filtrado por una edad,1. Elegir Edad: Todas las edades,—,Se ven los 12 productos,Media,Pasa,,
+CP-006,Un producto sin stock no se puede agregar al carrito,R-06,Caso negativo,Estar en /tienda,"1. Buscar Enterito de Algodón Nubes (stock 0)
+2. Intentar agregarlo",Producto 2,El botón dice Sin stock y está deshabilitado,Alta,Pasa,,
+CP-007,Precio máximo 10.000 muestra solo productos de hasta $ 10.000,R-03,Valores límite,Estar en /tienda,1. Mover Precio máx. a 10.000,Precio máx. 10000,"Se ven solo productos de $ 10.000 o menos (3: $ 8.500, $ 5.600, $ 9.800)",Baja,Pasa,,
+CP-008,Agregar un producto actualiza el contador y el total,R-02,Flujo positivo,Carrito vacío,1. Agregar Remera Dino Aventurero,Producto 4 ($ 9.800),"Contador 1, cantidad 1, total $ 9.800",Alta,Pasa,,
+CP-009,Quitar la única unidad vacía el carrito,R-02,Flujo positivo,Carrito con 1 unidad del producto 4,1. Tocar − en el carrito,—,"Contador 0, el producto sale del carrito, total $ 0",Media,Pasa,,
+CP-010,Agregar exactamente el stock disponible (límite),R-02,Valores límite,Carrito vacío,1. Agregar 4 veces Conjunto Deportivo Comodín,Producto 12 (stock 4),"Cantidad 4, total $ 111.200",Alta,Pasa,,
+CP-011,No se puede agregar una unidad más que el stock (límite + 1),R-02,Valores límite,Carrito con 4 unidades del producto 12,"1. Agregar una vez más el producto 12
+2. Repetir con + hasta 12",Producto 12 (stock 4),La cantidad se queda en 4 y la tienda avisa que no hay más stock,Alta,Falla: acepta 5 y llega a 12 ($ 333.600),BUG-002,
+CP-012,Compra con tarjeta de prueba aprobada confirma la orden,R-04,Flujo positivo,Carrito con el producto 4,"1. Finalizar compra
+2. Completar datos de prueba
+3. Confirmar compra",lucia.qa@example.com · 4111111111111111 · 12/30 · 123,Compra confirmada con número de orden MM-xxxxxx y email en la Bandeja,Alta,Pasa,,
+CP-013,Tarjeta rechazada muestra el error y no genera orden,R-04,Caso negativo,Carrito con el producto 4,"1. Finalizar compra
+2. Completar datos de prueba
+3. Confirmar compra",4000000000000002,Error Tarjeta rechazada y sin confirmación de compra,Alta,Pasa,,
+CP-014,Tarjeta sin fondos muestra el error y no genera orden,R-04,Caso negativo,Carrito con el producto 4,"1. Finalizar compra
+2. Completar datos de prueba
+3. Confirmar compra",4000000000009995,Error Fondos insuficientes y sin confirmación de compra,Alta,Pasa,,
+CP-015,Email sin @ muestra error de formato,R-05,Caso negativo,Carrito con el producto 4,"1. Completar el checkout con email lucia-sin-arroba
+2. Confirmar compra",lucia-sin-arroba,Error El formato de email no es válido. y sin confirmación,Media,Pasa,,
+CP-016,El checkout no confirma una compra con el carrito vacío,R-01,Caso negativo,Carrito vacío (ventana nueva),"1. Abrir /checkout directo
+2. Completar datos de prueba
+3. Confirmar compra",lucia.qa@example.com · 4111111111111111,La compra se bloquea con un aviso de carrito vacío,Alta,"Falla: Compra confirmada, orden MM-xxxxxx, cobra solo el envío ($ 3.500)",BUG-001,

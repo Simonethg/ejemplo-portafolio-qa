@@ -1,5 +1,5 @@
 > **Repo de referencia: no lo clones.** Armá el tuyo y usá este para comparar cómo debería verse después de cada paso.
-> Estás viendo **`v05-requisitos`**: Análisis de requisitos del filtro por edad.
+> Estás viendo **`v06-casos-de-prueba`**: 16 casos de prueba y primera ejecución.
 > Ejemplo con **Lucía Pereyra (QA ficticia)**: corridas, bugs y números reales (MiniModa, 2026-10-07). Reemplazá con tus propios hallazgos (mínimo 1 bug, 2 riesgos y 3 casos propios).
 
 | Etapa | Qué se suma | Ver |
@@ -9,8 +9,8 @@
 | `v02-riesgos` | Matriz de riesgos (ISO/IEC 25010), evidencia y registro de uso de IA | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v02-riesgos) |
 | `v03-plan-de-pruebas` | Plan de pruebas: objetivo, stakeholders, flujo de defectos y alcance | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v03-plan-de-pruebas) |
 | `v04-gestion-agil` | Tablero Kanban con límite WIP y sprint de 1 semana | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v04-gestion-agil) |
-| 👉 **v05-requisitos** | Análisis de requisitos del filtro por edad | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v05-requisitos) |
-| `v06-casos-de-prueba` | 16 casos de prueba y primera ejecución | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v06-casos-de-prueba) |
+| `v05-requisitos` | Análisis de requisitos del filtro por edad | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v05-requisitos) |
+| 👉 **v06-casos-de-prueba** | 16 casos de prueba y primera ejecución | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v06-casos-de-prueba) |
 | `v07-bugs` | BUG-001 y BUG-002 con evidencia + plantilla de Issue | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v07-bugs) |
 | `v08-accesibilidad-y-datos` | Lighthouse, DevTools, envío por país y datos ficticios | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v08-accesibilidad-y-datos) |
 | `v09-sql` | Consultas SQL de validación de stock | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v09-sql) |
@@ -48,8 +48,8 @@ ls
 ```bash
 cd ~/qa-minimoda-ecommerce
 git status
-git add README.md docs/
-git commit -m "Análisis de requisitos del filtro por edad con criterios Dado/Cuando/Entonces"
+git add README.md docs/ test-cases/ test-runs/
+git commit -m "16 casos de prueba con trazabilidad a riesgos y primera ejecución"
 git push
 ```
 
@@ -77,14 +77,31 @@ Proyecto de QA sobre el catálogo, los filtros, el carrito y el checkout de una 
 ## Objetivo
 Saber si el flujo de compra (filtro → carrito → checkout) funciona sin generar órdenes incorrectas y si la tienda está lista para vender.
 
+## Primeros resultados
+16 casos ejecutados el 2026-10-07: 14 pasan y 2 fallan (CP-011 y CP-016). Los dos fallos se reportan como bugs en el próximo avance. Detalle: [test-cases/](test-cases/).
+
+## Riesgos y cobertura
+
+| Riesgo | Prioridad | Cómo lo cubrí | Resultado |
+|---|---|---|---|
+| R-01 · El checkout confirma órdenes inválidas (sin productos, o sin mostrar qué se compra ni el total) | Alta | CP-016 · exploratoria | ❌ CP-016 falla |
+| R-02 · El carrito acepta más unidades que el stock | Alta | CP-010 · CP-011 | ❌ CP-011 falla |
+| R-04 · Una tarjeta rechazada genera una orden igual | Alta | CP-013 · CP-014 | ✅ Pasa |
+| R-06 · Se pueden agregar productos sin stock | Alta | CP-006 | ✅ Pasa (botón "Sin stock" deshabilitado) |
+| R-03 · El filtro por edad muestra productos de otra edad | Media | CP-001 a CP-005 | ✅ Pasa |
+
+Matriz completa (9 riesgos, 3 descartados con motivo): [docs/matriz-de-riesgos.md](docs/matriz-de-riesgos.md).
+
 ## Lo que hay hasta ahora
 
 | Qué | Qué demuestra | Link |
 |---|---|---|
-| Plan de pruebas | Objetivo, stakeholders, flujo de defectos y alcance | [docs/plan-de-pruebas.md](docs/plan-de-pruebas.md) |
+| Plan de pruebas | Objetivo, stakeholders, flujo de defectos, alcance y enfoque | [docs/plan-de-pruebas.md](docs/plan-de-pruebas.md) |
 | Matriz de riesgos | Pruebas priorizadas por riesgo (ISO/IEC 25010) | [docs/matriz-de-riesgos.md](docs/matriz-de-riesgos.md) |
 | Análisis de requisitos | Criterios ambiguos detectados antes de probar | [docs/analisis-de-requisitos.md](docs/analisis-de-requisitos.md) |
 | Gestión ágil | Tablero Kanban con límite WIP y sprint de 1 semana | [docs/gestion/](docs/gestion/) |
+| Casos de prueba | 16 casos: positivos, negativos y de valores límite, con trazabilidad a riesgos | [test-cases/](test-cases/) |
+| Ejecución | Qué pasó, qué falló y qué quedó bloqueado, con fecha | [test-runs/registro-de-ejecucion.md](test-runs/registro-de-ejecucion.md) |
 | Uso de IA | Qué hizo mal la IA y cómo lo corregí | [docs/uso-de-ia.md](docs/uso-de-ia.md) |
 
 ## Cómo trabajo con IA
