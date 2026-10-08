@@ -28,6 +28,8 @@
 
 **2. Sumá el `.gitignore` (una sola vez, en tu compu, cuando termines el paso 4).** Como en la guía T1: en VS Code **File → Open Folder** → `qa-minimoda-ecommerce` → **File → New File** → pegá el contenido de [.gitignore](.gitignore) → guardalo como `.gitignore` (con el punto adelante y sin `.txt`) → `git add .gitignore`, `git commit` y `git push`. No lo crees también desde la web: si lo hacés en los dos lados, Git da un conflicto. Así `node_modules/`, `.env` y `auth/` nunca se suben.
 
+**Check de entrega (automático).** Después del `.gitignore`, sumá el check de la guía T1. En cada push, **Actions** → «Check de entrega» revisa que no queden `[corchetes]` de plantilla, teléfonos ni direcciones, archivos copiados de este ejemplo, secretos (`.env`, `node_modules`, claves) ni commits con tu email personal, y te dice en qué archivo y línea está el problema y cómo arreglarlo.
+
 **3. Bajalo a tu compu (una sola vez).** Botón verde **Code** → **HTTPS** → copiá la URL. En la terminal (cambiá `TU-USUARIO`):
 
 ```bash
