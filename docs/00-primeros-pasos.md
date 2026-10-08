@@ -155,6 +155,7 @@ Más sobre Playwright: https://playwright.dev/docs/intro
 |---|---|---|
 | `ENOENT` o `no such file or directory` | No estás en la carpeta del repo | `cd ~/qa-minimoda-ecommerce` y chequeá con `ls` que se vea `README.md` |
 | `command not found: git` / `node` / `npm` (en Windows: *no se reconoce como nombre de un cmdlet*) | Falta instalar esa herramienta, o la terminal se abrió antes de instalarla | Instalala (pasos 2 y 7), cerrá y volvé a abrir la terminal, y probá `git --version` / `node --version` |
+| *No se puede cargar el archivo …\npm.ps1 porque la ejecución de scripts está deshabilitada* (Windows PowerShell) | Windows bloquea por defecto los scripts de PowerShell, y `npm`/`npx` usan uno | Corré una sola vez `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned` (si pregunta, respondé que sí), cerrá y volvé a abrir la terminal. Otra opción: usá Git Bash |
 | `npm warn deprecated …` | Avisos de paquetes viejos que usan otras dependencias | Se pueden ignorar: no son errores. Lo que importa es que el comando termine sin `npm error` |
 | `found N vulnerabilities` después de `npm install` | Avisos de `npm audit` sobre dependencias de herramientas que corren solo en tu compu | Se pueden ignorar en este proyecto. **No** corras `npm audit fix --force`: puede romper las versiones |
 | `rejected … (fetch first)` al hacer `git push` | En GitHub hay cambios que no tenés (por ejemplo, editaste desde la web) | `git pull --rebase` y después `git push` |
