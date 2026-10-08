@@ -21,7 +21,7 @@ Hace 5 años trabajo en atención al cliente de un e-commerce: reporto incidenci
 
 | Proyecto | Qué hice | Evidencia |
 |---|---|---|
-| **[QA de e-commerce · MiniModa](../README.md)** [![CI](https://github.com/Simonethg/plantilla-proyecto-qa/actions/workflows/playwright.yml/badge.svg)](https://github.com/Simonethg/plantilla-proyecto-qa/actions/workflows/playwright.yml) | Plan por riesgos · 16 casos (7 negativos y de límite) · 2 bugs de severidad alta · 4 requests de API con 15 aserciones · smoke de 5 tests en Playwright, verde en CI | [Informe final](../reports/informe-final.md) · [Bugs](../bug-reports/) |
+| **[QA de e-commerce · MiniModa](../README.md)** [![CI](https://github.com/Simonethg/ejemplo-portafolio-qa/actions/workflows/playwright.yml/badge.svg)](https://github.com/Simonethg/ejemplo-portafolio-qa/actions/workflows/playwright.yml) | Plan por riesgos · 16 casos (7 negativos y de límite) · 2 bugs de severidad alta · 4 requests de API con 15 aserciones · smoke de 5 tests en Playwright, verde en CI | [Informe final](../reports/informe-final.md) · [Bugs](../bug-reports/) |
 | **Beta testing · [segundo proyecto]** | [NO ESTÁ EN LA FICHA] | [NO ESTÁ EN LA FICHA] |
 
 ## Experiencia
