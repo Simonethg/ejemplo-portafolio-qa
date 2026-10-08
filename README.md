@@ -26,7 +26,7 @@
 
 **1. Creá tu repo vacío (una sola vez).** En GitHub: **+** → **New repository** → nombre `qa-minimoda-ecommerce` → **Public** → tildá **Add a README file** → **Create repository**. Es público porque es tu portafolio: nunca subas tu teléfono ni tu dirección.
 
-**2. Sumá el `.gitignore` (una sola vez, desde la web).** En tu repo: **Add file** → **Create new file** → nombre `.gitignore` → pegá el contenido de [.gitignore](.gitignore) → **Commit changes**. Así `node_modules/`, `.env` y `auth/` nunca se suben.
+**2. Sumá el `.gitignore` (una sola vez, en tu compu, cuando termines el paso 4).** Como en la guía T1: en VS Code **File → Open Folder** → `qa-minimoda-ecommerce` → **File → New File** → pegá el contenido de [.gitignore](.gitignore) → guardalo como `.gitignore` (con el punto adelante y sin `.txt`) → `git add .gitignore`, `git commit` y `git push`. No lo crees también desde la web: si lo hacés en los dos lados, Git da un conflicto. Así `node_modules/`, `.env` y `auth/` nunca se suben.
 
 **3. Bajalo a tu compu (una sola vez).** Botón verde **Code** → **HTTPS** → copiá la URL. En la terminal (cambiá `TU-USUARIO`):
 
