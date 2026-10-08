@@ -1,5 +1,5 @@
 > **Repo de referencia: no lo clones.** Armá el tuyo y usá este para comparar cómo debería verse después de cada paso.
-> Estás viendo **`v12-informe-final`**: Informe final y README como caso de estudio.
+> Estás viendo **`v13-perfil`**: Perfil de GitHub con proyectos, métricas y habilidades con evidencia (versión final).
 > Ejemplo con **Lucía Pereyra (QA ficticia)**: corridas, bugs y números reales (MiniModa, 2026-10-07). Reemplazá con tus propios hallazgos (mínimo 1 bug, 2 riesgos y 3 casos propios).
 
 | Etapa | Qué se suma | Ver |
@@ -16,8 +16,8 @@
 | `v09-sql` | Consultas SQL de validación de stock | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v09-sql) |
 | `v10-api` | Colección de Postman + `npm run test:api` | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v10-api) |
 | `v11-playwright-ci` | Smoke con Playwright + TypeScript y CI con badge | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v11-playwright-ci) |
-| 👉 **v12-informe-final** | Informe final y README como caso de estudio | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v12-informe-final) |
-| `v13-perfil` | Perfil de GitHub con proyectos, métricas y habilidades con evidencia (versión final) | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v13-perfil) |
+| `v12-informe-final` | Informe final y README como caso de estudio | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v12-informe-final) |
+| 👉 **v13-perfil** | Perfil de GitHub con proyectos, métricas y habilidades con evidencia (versión final) | [abrir](https://github.com/Simonethg/ejemplo-portafolio-qa/tree/v13-perfil) |
 
 <details>
 <summary><b>📘 Cómo armar y subir TU repo</b> (paso a paso, para copiar y pegar)</summary>
@@ -46,12 +46,14 @@ ls
 **5. Subí el avance de este paso.** Creá o editá los archivos (mirá cómo quedan en esta versión) y subilos. Antes de `git add`, corré `git status` y revisá que **no** aparezcan `.env`, `auth/` ni `node_modules/`:
 
 ```bash
-cd ~/qa-minimoda-ecommerce
+cd ~/TU-USUARIO   # tu repo de perfil
 git status
-git add README.md docs/ reports/ test-cases/ test-runs/
-git commit -m "Informe final con métricas y README como caso de estudio"
+git add README.md
+git commit -m "Perfil de GitHub actualizado con proyectos, métricas y habilidades con evidencia"
 git push
 ```
+
+Este paso es en tu repo de **perfil** (`TU-USUARIO/TU-USUARIO`): actualizá su `README.md` con el modelo de [perfil-ejemplo/README.md](perfil-ejemplo/README.md) y subilo con los mismos 4 comandos desde esa carpeta. En `qa-minimoda-ecommerce` no va la carpeta `perfil-ejemplo/`.
 
 **Errores comunes**
 
@@ -70,7 +72,7 @@ git push
 
 # QA de MiniModa · e-commerce de ropa infantil
 
-[![Playwright Tests](https://github.com/Simonethg/ejemplo-portafolio-qa/actions/workflows/playwright.yml/badge.svg?branch=v12-informe-final)](https://github.com/Simonethg/ejemplo-portafolio-qa/actions/workflows/playwright.yml)
+[![Playwright Tests](https://github.com/Simonethg/ejemplo-portafolio-qa/actions/workflows/playwright.yml/badge.svg)](https://github.com/Simonethg/ejemplo-portafolio-qa/actions/workflows/playwright.yml)
 
 Proyecto de QA de punta a punta sobre el catálogo, los filtros, el carrito y el checkout de una tienda online: análisis de riesgos, casos de prueba, bugs reportados con evidencia, pruebas de API, SQL y un smoke automatizado con Playwright que corre en CI.
 
