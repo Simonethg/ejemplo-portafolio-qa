@@ -4,9 +4,14 @@
   "private": true,
   "description": "Proyecto de QA sobre MiniModa: riesgos, casos, bugs, API, SQL y smoke con Playwright en CI.",
   "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "report": "playwright show-report",
     "test:api": "newman run api-tests/minimoda.postman_collection.json -e api-tests/minimoda.postman_environment.json"
   },
   "devDependencies": {
+    "@playwright/test": "~1.63.0",
+    "@types/node": "^26.6.4",
     "newman": "^6.2.2"
   }
 }

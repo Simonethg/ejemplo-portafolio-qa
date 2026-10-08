@@ -8,5 +8,6 @@
 | [checkout-sin-total.png](checkout-sin-total.png) | Checkout con un producto en el carrito: no muestra el detalle ni el total, solo el envío | Riesgo R-01 · OBS-01 |
 | [checkout-carrito-vacio.png](checkout-carrito-vacio.png) | "Compra confirmada" con número de orden, entrando a /checkout con el carrito vacío | BUG-001 |
 | [lighthouse-accesibilidad-tienda.png](lighthouse-accesibilidad-tienda.png) | Lighthouse: accesibilidad 94 en /tienda | Accesibilidad |
+| [reporte-playwright.png](reporte-playwright.png) | Reporte HTML de Playwright: 5 de 5 en verde | Automatización |
 
 Antes de subir cada captura: sin otras pestañas, sin tu mail, sin notificaciones, sin barra de favoritos y solo con datos de prueba.

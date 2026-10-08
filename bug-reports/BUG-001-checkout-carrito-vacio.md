@@ -4,9 +4,9 @@
 |---|---|
 | **Severidad** | Alta · se generan órdenes sin productos que cobran el envío; no bloquea comprar, por eso no es crítica |
 | **Entorno** | https://minimoda-navy.vercel.app · Chromium · Linux · 2026-10-07 |
-| **Frecuencia** | Siempre: 3 de 3 intentos manuales |
+| **Frecuencia** | Siempre: 3 de 3 intentos manuales y en todas las corridas automáticas |
 | **Riesgo relacionado** | R-01 |
-| **Caso relacionado** | CP-016 |
+| **Caso relacionado** | CP-016 · test `tests/bugs-conocidos.spec.ts` |
 
 ## Pasos para reproducir
 1. Abrir una ventana nueva (carrito vacío) e ir directo a https://minimoda-navy.vercel.app/checkout.
@@ -27,3 +27,4 @@ Aparece "✅ Compra confirmada. Orden MM-860463. Envío a Argentina: $ 3.500. Te
 
 ## Notas
 - En DevTools, Network: "Confirmar compra" no hace ningún request al servidor; la orden se arma en el navegador. Hace falta validar el carrito antes de confirmar (idealmente en el servidor).
+- Automatizado con `test.fail()`: cuando lo corrijan, el CI se pone en rojo para avisar que hay que volver a probar y cerrar este bug.

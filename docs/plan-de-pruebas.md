@@ -7,7 +7,7 @@
 | **Producto** | MiniModa · tienda online de ropa infantil (demo de AcademiaQA, datos ficticios) |
 | **URL** | https://minimoda-navy.vercel.app |
 | **Autora** | Lucía Pereyra |
-| **Versión del plan** | 0.10 · 2026-10-07 |
+| **Versión del plan** | 0.11 · 2026-10-07 |
 
 ## 1. Objetivo
 Saber si el flujo de compra (filtro → carrito → checkout) funciona sin generar órdenes incorrectas y si la tienda está lista para vender.
@@ -42,7 +42,7 @@ Ver [matriz-de-riesgos.md](matriz-de-riesgos.md): 9 riesgos, 4 de prioridad alta
 | Accesibilidad / compatibilidad | Lighthouse, DevTools, costo de envío por país | [accesibilidad-y-compatibilidad.md](accesibilidad-y-compatibilidad.md) |
 | Datos | SQL sobre el catálogo (stock) | [sql/](../sql/) |
 | API | Postman/Newman: status, tiempo, campos, caso negativo 404 | [api-tests/](../api-tests/) |
-| Regresión (smoke) | Playwright + TypeScript en GitHub Actions | Pendiente |
+| Regresión (smoke) | Playwright + TypeScript en GitHub Actions | [tests/](../tests/) |
 
 ## 7. Entorno y datos
 - Navegador: Chromium · SO: Linux.
@@ -50,7 +50,7 @@ Ver [matriz-de-riesgos.md](matriz-de-riesgos.md): 9 riesgos, 4 de prioridad alta
 
 ## 8. Criterios de entrada y salida
 - **Entrada:** la URL responde 200 y el requisito del filtro está revisado.
-- **Salida:** 100 % de los casos de prioridad alta ejecutados · todos los bugs de severidad alta reportados con evidencia.
+- **Salida:** 100 % de los casos de prioridad alta ejecutados · todos los bugs de severidad alta reportados con evidencia · smoke en verde en CI.
 
 ## 9. Gestión de defectos
 - Cada bug va como Issue con la plantilla de [.github/ISSUE_TEMPLATE/bug_report.md](../.github/ISSUE_TEMPLATE/bug_report.md) y con una copia en `bug-reports/`.
@@ -60,7 +60,7 @@ Ver [matriz-de-riesgos.md](matriz-de-riesgos.md): 9 riesgos, 4 de prioridad alta
 Tablero Kanban y sprint de 1 semana: [gestion/](gestion/).
 
 ## 11. Entregables
-[Matriz de riesgos](matriz-de-riesgos.md) · [análisis de requisitos](analisis-de-requisitos.md) · [casos](../test-cases/) · [registro de ejecución](../test-runs/registro-de-ejecucion.md) · [bugs](../bug-reports/) · [accesibilidad](accesibilidad-y-compatibilidad.md) · [consultas SQL](../sql/) · [colección de API](../api-tests/) · (el resto se suma en los próximos avances)
+[Matriz de riesgos](matriz-de-riesgos.md) · [análisis de requisitos](analisis-de-requisitos.md) · [casos](../test-cases/) · [registro de ejecución](../test-runs/registro-de-ejecucion.md) · [bugs](../bug-reports/) · [accesibilidad](accesibilidad-y-compatibilidad.md) · [consultas SQL](../sql/) · [colección de API](../api-tests/) · [tests automatizados con CI](../tests/) · (el resto se suma en los próximos avances)
 
 ## 12. Uso de IA
 La IA hace borradores; la revisión y la decisión son mías. Registro de lo que corregí: [uso-de-ia.md](uso-de-ia.md).

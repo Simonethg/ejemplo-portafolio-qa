@@ -17,6 +17,7 @@
 | 2026-10-07 | Accesibilidad | Problemas de accesibilidad probables | Dijo que las imágenes no tenían texto alternativo | Lo descarté | Lighthouse: la auditoría de texto alternativo pasa |
 | 2026-10-07 | SQL | Productos de Niño (3-8) sin stock | Filtró con `edad = 'Niño'` y devolvió 0 filas | Valor exacto: `'Niño (3-8)'` → 1 fila (Buzo con Capucha Cohete) | Comparé con la tienda: es el único "Sin stock" en ese filtro |
 | 2026-10-07 | API | Requests de Postman para la API de productos | Supuso la ruta `/api/productos` (en español) | La ruta real es `/api/products` | `/api/productos` da 404; `/api/products` da 200 |
+| 2026-10-07 | Test de Playwright | Limpiar el test grabado con codegen | Inventó el test id `order-success` y usó `waitForTimeout(5000)` | Lo cambié por `checkout-success` y por aserciones que esperan solas (`toBeVisible`, `toHaveText`) | Revisé el DOM de la página de checkout y corrí el test 3 veces |
 
 <details>
 <summary>Prompts principales</summary>
@@ -26,6 +27,13 @@
 Sos QA. Esta es una tienda online de ropa infantil con catálogo, filtro por edad, color y precio,
 carrito y checkout con tarjetas de prueba. Proponé 10 riesgos de calidad usando ISO/IEC 25010.
 Para cada uno: característica, riesgo, probabilidad, impacto y cómo lo probarías.
+```
+
+### Limpiar el test de Playwright
+```text
+Este es un test grabado con Playwright codegen. Hacelo legible: nombres claros,
+locators por data-testid y aserciones al final de cada flujo. No inventes test ids:
+si no sabés uno, dejá un comentario TODO.
 ```
 
 </details>

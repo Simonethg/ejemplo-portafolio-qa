@@ -40,5 +40,5 @@ Moneda: siempre pesos ($). Idioma: siempre español. Sin bloqueos.
 ## Navegadores
 | Navegador | Versión | Resultado |
 |---|---|---|
-| Chrome (headless) | 154 · Linux | Lighthouse y recorrido manual sin errores |
-| Firefox · WebKit (Safari) | — | No probado (próximo paso) |
+| Chromium (Playwright) | 1.63 · Linux | Smoke 5/5 en verde |
+| Firefox · WebKit (Safari) | — | No probado (próximo paso: sumarlos al CI) |

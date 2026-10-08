@@ -5,6 +5,7 @@
 | Archivo | Qué tiene |
 |---|---|
 | [casos-de-prueba.csv](casos-de-prueba.csv) | 16 casos (formato importable en Qase o en una planilla) con riesgo, técnica, datos, resultado y bug |
+| [smoke-suite.md](smoke-suite.md) | Los flujos críticos que se automatizaron y por qué |
 
 **Técnicas usadas:** partición de equivalencia (1 caso por opción del filtro por edad), valores límite (stock 4: agrego 4 y 5; precio máximo), casos negativos (sin stock, tarjetas rechazadas, email inválido, carrito vacío).
 **Trazabilidad:** cada caso indica qué riesgo (R-xx) cubre y, si falló, qué bug abrió.
@@ -17,3 +18,4 @@
 | Pasan | 14 |
 | Fallan | 2 → CP-011 ([BUG-002](../bug-reports/BUG-002-carrito-supera-stock.md)) y CP-016 ([BUG-001](../bug-reports/BUG-001-checkout-carrito-vacio.md)) |
 | Bloqueados | 0 |
+| Automatizados | 5 (CP-002, CP-008, CP-012, CP-013 y CP-016) |
