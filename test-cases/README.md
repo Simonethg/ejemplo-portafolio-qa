@@ -15,5 +15,5 @@
 |---|---|
 | Casos | 16 (7 negativos o de valores límite) |
 | Pasan | 14 |
-| Fallan | 2 → CP-011 (BUG-002 (a reportar)) y CP-016 (BUG-001 (a reportar)) |
+| Fallan | 2 → CP-011 ([BUG-002](../bug-reports/BUG-002-carrito-supera-stock.md)) y CP-016 ([BUG-001](../bug-reports/BUG-001-checkout-carrito-vacio.md)) |
 | Bloqueados | 0 |

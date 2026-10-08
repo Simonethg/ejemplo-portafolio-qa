@@ -7,7 +7,7 @@
 | **Producto** | MiniModa · tienda online de ropa infantil (demo de AcademiaQA, datos ficticios) |
 | **URL** | https://minimoda-navy.vercel.app |
 | **Autora** | Lucía Pereyra |
-| **Versión del plan** | 0.6 · 2026-10-07 |
+| **Versión del plan** | 0.7 · 2026-10-07 |
 
 ## 1. Objetivo
 Saber si el flujo de compra (filtro → carrito → checkout) funciona sin generar órdenes incorrectas y si la tienda está lista para vender.
@@ -38,7 +38,7 @@ Ver [matriz-de-riesgos.md](matriz-de-riesgos.md): 9 riesgos, 4 de prioridad alta
 | Tipo de prueba | Técnica | Dónde queda |
 |---|---|---|
 | Funcional | Partición de equivalencia (filtro por edad), valores límite (stock 4), casos negativos (tarjetas rechazadas, email inválido, carrito vacío) | [test-cases/](../test-cases/) |
-| Exploratoria | Sesión de 30 min con charter sobre checkout y carrito | Pendiente |
+| Exploratoria | Sesión de 30 min con charter sobre checkout y carrito | [test-runs/](../test-runs/) |
 | Accesibilidad / compatibilidad | Lighthouse, DevTools, costo de envío por país | Pendiente |
 | Datos | SQL sobre el catálogo (stock) | Pendiente |
 | API | Postman/Newman: status, tiempo, campos, caso negativo 404 | Pendiente |
@@ -53,14 +53,14 @@ Ver [matriz-de-riesgos.md](matriz-de-riesgos.md): 9 riesgos, 4 de prioridad alta
 - **Salida:** 100 % de los casos de prioridad alta ejecutados · todos los bugs de severidad alta reportados con evidencia.
 
 ## 9. Gestión de defectos
-- Cada bug va como Issue con una plantilla de bug y con una copia en `bug-reports/`.
+- Cada bug va como Issue con la plantilla de [.github/ISSUE_TEMPLATE/bug_report.md](../.github/ISSUE_TEMPLATE/bug_report.md) y con una copia en `bug-reports/`.
 - **Severidad** (impacto técnico): Crítica / Alta / Media / Baja. **Prioridad** (urgencia de negocio): la decide el PM.
 
 ## 10. Gestión del trabajo
 Tablero Kanban y sprint de 1 semana: [gestion/](gestion/).
 
 ## 11. Entregables
-[Matriz de riesgos](matriz-de-riesgos.md) · [análisis de requisitos](analisis-de-requisitos.md) · [casos](../test-cases/) · [registro de ejecución](../test-runs/registro-de-ejecucion.md) · (el resto se suma en los próximos avances)
+[Matriz de riesgos](matriz-de-riesgos.md) · [análisis de requisitos](analisis-de-requisitos.md) · [casos](../test-cases/) · [registro de ejecución](../test-runs/registro-de-ejecucion.md) · [bugs](../bug-reports/) · (el resto se suma en los próximos avances)
 
 ## 12. Uso de IA
 La IA hace borradores; la revisión y la decisión son mías. Registro de lo que corregí: [uso-de-ia.md](uso-de-ia.md).

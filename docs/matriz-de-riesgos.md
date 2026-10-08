@@ -7,8 +7,8 @@ Riesgos de calidad por característica de ISO/IEC 25010. **Prioridad = Probabili
 
 | ID | Característica | Riesgo | Prob. | Impacto | Prioridad | Origen | ¿Se mantiene? ¿Por qué? | Cómo lo pruebo | Resultado / evidencia |
 |---|---|---|---|---|---|---|---|---|---|
-| R-01 | Adecuación funcional | El checkout confirma órdenes inválidas (sin productos, o sin mostrar qué se compra ni el total) | Alta | Alto | **Alta** | Propio | Sí: se puede entrar a `/checkout` por URL o desde el menú, y el checkout no muestra el total | CP-016 · exploratoria | ❌ CP-016 falla |
-| R-02 | Adecuación funcional | El carrito acepta más unidades que el stock | Alta | Alto | **Alta** | Propio | Sí: el producto 12 tiene stock 4 y el botón sigue activo | CP-010 · CP-011 | ❌ CP-011 falla |
+| R-01 | Adecuación funcional | El checkout confirma órdenes inválidas (sin productos, o sin mostrar qué se compra ni el total) | Alta | Alto | **Alta** | Propio | Sí: se puede entrar a `/checkout` por URL o desde el menú, y el checkout no muestra el total | CP-016 · exploratoria | ❌ [BUG-001](../bug-reports/BUG-001-checkout-carrito-vacio.md) |
+| R-02 | Adecuación funcional | El carrito acepta más unidades que el stock | Alta | Alto | **Alta** | Propio | Sí: el producto 12 tiene stock 4 y el botón sigue activo | CP-010 · CP-011 | ❌ [BUG-002](../bug-reports/BUG-002-carrito-supera-stock.md) |
 | R-04 | Seguridad (integridad del pago) | Una tarjeta rechazada genera una orden igual | Media | Alto | **Alta** | IA | Sí: la tienda tiene tarjetas de prueba que rechazan | CP-013 · CP-014 | ✅ Pasa |
 | R-06 | Adecuación funcional | Se pueden agregar productos sin stock | Media | Alto | **Alta** | IA | Sí: hay 3 productos con stock 0 | CP-006 | ✅ Pasa (botón "Sin stock" deshabilitado) |
 | R-03 | Adecuación funcional | El filtro por edad muestra productos de otra edad | Baja | Alto | Media | IA | Sí: es la forma principal de buscar | CP-001 a CP-005 | ✅ Pasa |
